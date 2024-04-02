@@ -42,7 +42,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     
     
-class RecIntegral {
+static class RecIntegral implements Serializable {
         
          double num1;
          double num2;
@@ -51,14 +51,6 @@ class RecIntegral {
 
         public RecIntegral(double num1,double num2,double num3, double num4) throws MyExeption 
         {
-            
-                if(num1 < 0.000001) throw new MyExeption("Error Bottom\nBOTTOM < 0.000001", 1);
-                if(num2 < 0.000001) throw new MyExeption("Error Top\nTOP < 0.000001", 2);
-                if(num3 < 0.0001) throw new MyExeption("Error Step\nSTEP < 0.0001", 3);
-                
-                if(num1 > 1000000) throw new MyExeption("Error Bottom\nBOTTOM > 1000000", 1);
-                if(num2 > 1000000) throw new MyExeption("Error Top\nTOP > 1000000", 2);
-                if(num3 > 1000000) throw new MyExeption("Error Step\nSTEP > 1000000", 3);
             
                 this.num1 = num1;
                 this.num2 = num2;
@@ -111,14 +103,12 @@ class RecIntegral {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -236,40 +226,45 @@ class RecIntegral {
             }
         });
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("fill");
-
+        jButton1.setText("fill");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("clear");
-
+        jButton2.setText("clear");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("save");
-        jLabel6.setToolTipText("");
-
+        jButton3.setText("save");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("download");
-
+        jButton7.setText("download");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("download binary");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("save binary");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
             }
         });
 
@@ -281,35 +276,26 @@ class RecIntegral {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton6)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton4)
-                        .addGap(151, 151, 151)
-                        .addComponent(jButton5)
-                        .addGap(118, 118, 118))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(149, 149, 149))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,30 +307,26 @@ class RecIntegral {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(111, 111, 111)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(46, 46, 46)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 81, Short.MAX_VALUE)))
+                                .addGap(0, 71, Short.MAX_VALUE)))
                         .addGap(30, 30, 30))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(73, 73, 73)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82)))
+                        .addGap(44, 44, 44)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41))
         );
 
@@ -368,17 +350,40 @@ class RecIntegral {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         
-        
+        try{
         if( jTextField1.getText().equals("") || jTextField2.getText().equals("") || jTextField3.getText().equals("")){
             return;
         }
         
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
 
+        
+        
+        if(Double.parseDouble(jTextField1.getText()) < 0.000001) throw new MyExeption("Error Bottom\nBOTTOM < 0.000001", 1);
+        if(Double.parseDouble(jTextField2.getText()) < 0.000001) throw new MyExeption("Error Top\nTOP < 0.000001", 2);
+        if(Double.parseDouble(jTextField3.getText()) < 0.0001) throw new MyExeption("Error Step\nSTEP < 0.0001", 3);
+                
+        if(Double.parseDouble(jTextField1.getText()) > 1000000) throw new MyExeption("Error Bottom\nBOTTOM > 1000000", 1);
+        if(Double.parseDouble(jTextField2.getText()) > 1000000) throw new MyExeption("Error Top\nTOP > 1000000", 2);
+        if(Double.parseDouble(jTextField3.getText()) > 1000000) throw new MyExeption("Error Step\nSTEP > 1000000", 3);
+        
+        
+        
+        
         model.addRow(new Object[] { Double.parseDouble(jTextField1.getText()), 
                                     Double.parseDouble(jTextField2.getText()), 
                                     Double.parseDouble(jTextField3.getText()), 
                                     " "});
+        
+        }catch(MyExeption ex){
+            
+                JOptionPane.showMessageDialog(null, ex.getMessage());
+            
+                System.out.println(ex.getMessage());
+                System.out.println(ex.getNumber());
+        }
+        
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -417,10 +422,9 @@ class RecIntegral {
         if(jTable1.getValueAt(index, 3).equals(S)) return;
         
         
-        String str = String.valueOf(S);
-        
-        numb.add(new RecIntegral(niz, verx, step, S));
-        jTable1.setValueAt(str, index, 3);
+        RecIntegral tmp = new RecIntegral(niz, verx, step, S);
+        numb.add(tmp);
+        jTable1.setValueAt(S, index, 3);
         }catch(MyExeption ex){
             
                 JOptionPane.showMessageDialog(null, ex.getMessage());
@@ -475,14 +479,17 @@ class RecIntegral {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-                  
+            
+        
+        if(numb.size() == 0) return;
+        
         try { 
             JFileChooser dlg = new JFileChooser();
             dlg.showSaveDialog(this);
             FileWriter myfile = new FileWriter(dlg.getSelectedFile());
             
-            for(int i = 0; i < numb.size(); i += 1){
             
+            for(int i = 0; i < numb.size(); i += 1){
                 myfile.write((String.valueOf(numb.get(i).num1) + ';' + String.valueOf(numb.get(i).num2) + ';'+ String.valueOf(numb.get(i).num3) + ';' + String.valueOf(numb.get(i).num4) + '\n'));
             }
             myfile.flush();
@@ -542,6 +549,55 @@ class RecIntegral {
         
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        
+        ObjectInputStream in = null;
+        numb.clear();
+           
+        try { 
+            JFileChooser dlg = new JFileChooser();
+            dlg.showOpenDialog(this);
+           // in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("RecIntegral.ser")));
+            in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(dlg.getSelectedFile())));
+            try {
+                numb = (ArrayList<RecIntegral>)in.readObject();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch ( IOException ex ) {
+             JOptionPane.showMessageDialog(null, "Неправльный формат файла");
+            ex.printStackTrace();
+        }
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        if (jTable1.getRowCount() != numb.size())
+            for (RecIntegral rec:numb ){
+                model.addRow(new Object[] {rec.num1, rec.num2, rec.num3, rec.num4});
+            }
+
+        
+        
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        
+        ObjectOutputStream out = null;
+        try {
+            JFileChooser dlg = new JFileChooser();
+            dlg.showSaveDialog(this);
+            out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(dlg.getSelectedFile())));
+            out.writeObject(numb);
+            out.flush();
+            out.close();
+        } catch ( IOException ex ) {
+                ex.printStackTrace();
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     
     
     
@@ -590,13 +646,11 @@ class RecIntegral {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
